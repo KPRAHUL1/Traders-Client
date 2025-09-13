@@ -2,67 +2,109 @@ import { useState } from 'react'
 import { useAuth } from '../../hooks/useAuth.js'
 
 const categories = [
-  { id: 1, name: 'Electronics', icon: '📱' },
-  { id: 2, name: 'Fashion', icon: '👕' },
-  { id: 3, name: 'Home & Garden', icon: '🏠' },
-  { id: 4, name: 'Automotive', icon: '🚗' },
-  { id: 5, name: 'Sports', icon: '⚽' },
-  { id: 6, name: 'Books', icon: '📚' },
+  { id: 1, name: 'Bricks', icon: '🧱' },
+  { id: 2, name: 'Sand', icon: '🏖️' },
+  { id: 3, name: 'Wood', icon: '🪵' },
+  { id: 4, name: 'Cement', icon: '🏗️' },
+  { id: 5, name: 'Steel', icon: '🔩' },
+  { id: 6, name: 'Tiles', icon: '🔲' },
+]
+
+const chambers = [
+  {
+    id: 1,
+    name: 'Premium Brick Chamber',
+    location: 'Chennai, Tamil Nadu',
+    rating: 4.8,
+    totalOrders: 1250,
+    established: '2015',
+    specialties: ['Red Bricks', 'Fly Ash Bricks', 'Hollow Bricks']
+  },
+  {
+    id: 2,
+    name: 'Quality Sand Suppliers',
+    location: 'Mumbai, Maharashtra',
+    rating: 4.6,
+    totalOrders: 890,
+    established: '2018',
+    specialties: ['River Sand', 'M-Sand', 'Plaster Sand']
+  },
+  {
+    id: 3,
+    name: 'Timber Works',
+    location: 'Bangalore, Karnataka',
+    rating: 4.7,
+    totalOrders: 650,
+    established: '2012',
+    specialties: ['Teak Wood', 'Pine Wood', 'Plywood']
+  }
 ]
 
 const featuredProducts = [
   {
     id: 1,
-    name: 'Wireless Bluetooth Headphones',
-    price: 2999,
-    originalPrice: 3999,
-    rating: 4.5,
-    reviews: 1234,
-    image: 'https://via.placeholder.com/200x200?text=Headphones',
-    seller: 'TechStore India',
-    isPrime: true,
-    discount: 25
+    name: 'Premium Red Bricks (1000 pieces)',
+    price: 4500,
+    originalPrice: 5000,
+    rating: 4.8,
+    reviews: 234,
+    image: 'https://via.placeholder.com/200x200?text=Red+Bricks',
+    chamber: 'Premium Brick Chamber',
+    chamberId: 1,
+    stock: 15000,
+    quality: 'Grade A',
+    discount: 10,
+    unit: 'per 1000 pieces'
   },
   {
     id: 2,
-    name: 'Cotton T-Shirt Pack of 3',
-    price: 899,
-    originalPrice: 1299,
-    rating: 4.2,
-    reviews: 567,
-    image: 'https://via.placeholder.com/200x200?text=T-Shirt',
-    seller: 'Fashion Hub',
-    isPrime: false,
-    discount: 31
+    name: 'River Sand (1 Ton)',
+    price: 1200,
+    originalPrice: 1400,
+    rating: 4.6,
+    reviews: 189,
+    image: 'https://via.placeholder.com/200x200?text=River+Sand',
+    chamber: 'Quality Sand Suppliers',
+    chamberId: 2,
+    stock: 500,
+    quality: 'Premium',
+    discount: 14,
+    unit: 'per ton'
   },
   {
     id: 3,
-    name: 'Smart Watch Series 7',
-    price: 15999,
-    originalPrice: 19999,
+    name: 'Teak Wood Planks (100 sq ft)',
+    price: 8500,
+    originalPrice: 9500,
     rating: 4.7,
-    reviews: 2341,
-    image: 'https://via.placeholder.com/200x200?text=Smart+Watch',
-    seller: 'ElectroMart',
-    isPrime: true,
-    discount: 20
+    reviews: 156,
+    image: 'https://via.placeholder.com/200x200?text=Teak+Wood',
+    chamber: 'Timber Works',
+    chamberId: 3,
+    stock: 200,
+    quality: 'Grade A+',
+    discount: 11,
+    unit: 'per 100 sq ft'
   },
   {
     id: 4,
-    name: 'Home Decor Set',
-    price: 2499,
-    originalPrice: 3499,
-    rating: 4.3,
-    reviews: 789,
-    image: 'https://via.placeholder.com/200x200?text=Home+Decor',
-    seller: 'Decor Plus',
-    isPrime: false,
-    discount: 29
+    name: 'Fly Ash Bricks (500 pieces)',
+    price: 2200,
+    originalPrice: 2500,
+    rating: 4.5,
+    reviews: 98,
+    image: 'https://via.placeholder.com/200x200?text=Fly+Ash+Bricks',
+    chamber: 'Premium Brick Chamber',
+    chamberId: 1,
+    stock: 8000,
+    quality: 'Grade A',
+    discount: 12,
+    unit: 'per 500 pieces'
   }
 ]
 
 const trendingSearches = [
-  'iPhone 15', 'Samsung Galaxy', 'Laptop', 'Shoes', 'Books', 'Kitchen Appliances'
+  'Red Bricks', 'River Sand', 'Teak Wood', 'Cement', 'Steel Rods', 'Floor Tiles'
 ]
 
 export default function Marketplace() {
@@ -87,7 +129,7 @@ export default function Marketplace() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">MarketPlace</h1>
+              <h1 className="text-2xl font-bold text-blue-600">Construction Materials Hub</h1>
               <span className="ml-2 text-sm text-gray-500">+ IndiaMART</span>
             </div>
 
@@ -96,7 +138,7 @@ export default function Marketplace() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search for products, brands and more..."
+                  placeholder="Search for bricks, sand, wood, cement..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -150,6 +192,38 @@ export default function Marketplace() {
           </div>
         </div>
 
+        {/* Chambers */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Featured Chambers</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {chambers.map((chamber) => (
+              <div key={chamber.id} className="bg-white rounded-lg p-6 shadow-sm border hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-semibold text-gray-900">{chamber.name}</h4>
+                  <div className="flex items-center">
+                    <svg className="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <span className="text-sm font-medium">{chamber.rating}</span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 mb-3">{chamber.location}</p>
+                <div className="flex flex-wrap gap-1 mb-3">
+                  {chamber.specialties.map((specialty, index) => (
+                    <span key={index} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      {specialty}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex justify-between text-sm text-gray-500">
+                  <span>{chamber.totalOrders} orders</span>
+                  <span>Est. {chamber.established}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Categories */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Shop by Category</h3>
@@ -173,7 +247,7 @@ export default function Marketplace() {
 
         {/* Featured Products */}
         <div className="mb-8">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Featured Products</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Featured Construction Materials</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow">
@@ -188,16 +262,26 @@ export default function Marketplace() {
                       {product.discount}% OFF
                     </div>
                   )}
-                  {product.isPrime && (
-                    <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
-                      Prime
-                    </div>
-                  )}
+                  <div className="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">
+                    {product.quality}
+                  </div>
                 </div>
                 <div className="p-4">
                   <h4 className="font-medium text-gray-900 mb-1 line-clamp-2">{product.name}</h4>
-                  <p className="text-sm text-gray-500 mb-2">{product.seller}</p>
-                  <div className="flex items-center mb-2">
+                  <p className="text-sm text-gray-500 mb-2">{product.chamber}</p>
+                  
+                  {/* Stock Information */}
+                  <div className="mb-2">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-gray-600">Stock:</span>
+                      <span className={`font-medium ${product.stock > 1000 ? 'text-green-600' : product.stock > 100 ? 'text-yellow-600' : 'text-red-600'}`}>
+                        {product.stock.toLocaleString()} {product.unit}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Rating and Reviews */}
+                  <div className="flex items-center mb-3">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
                         <svg
@@ -214,6 +298,8 @@ export default function Marketplace() {
                     </div>
                     <span className="ml-1 text-sm text-gray-500">({product.reviews})</span>
                   </div>
+
+                  {/* Price and Order */}
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-lg font-semibold text-gray-900">₹{product.price.toLocaleString()}</span>
@@ -222,12 +308,13 @@ export default function Marketplace() {
                           ₹{product.originalPrice.toLocaleString()}
                         </span>
                       )}
+                      <div className="text-xs text-gray-500">{product.unit}</div>
                     </div>
                     <button
                       onClick={() => addToCart(product)}
                       className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
                     >
-                      Add to Cart
+                      Order Now
                     </button>
                   </div>
                 </div>

@@ -46,7 +46,7 @@ export function AppRoutes() {
         </Route>
 
         {/* Role-based User Routes */}
-        <Route element={<ProtectedRoute allowedRoles={["superadmin", "agent", "contractor", "manufacturer"]} />}> 
+        <Route element={<ProtectedRoute allowedRoles={["superadmin", "agent", "contractor", "manufacturer", "chamber", "trader"]} />}> 
           <Route element={<DashboardLayout />}>
             <Route path="/superadmin" element={<Navigate to="/superadmin/dashboard" replace />} />
             <Route path="/superadmin/dashboard" element={<SuperAdminDashboard />} />
@@ -65,6 +65,14 @@ export function AppRoutes() {
             {/* Manufacturer */}
             <Route path="/manufacturer" element={<Navigate to="/manufacturer/dashboard" replace />} />
             <Route path="/manufacturer/dashboard" element={<ManufacturerDashboard />} />
+
+            {/* Chamber */}
+            <Route path="/chamber" element={<Navigate to="/chamber/dashboard" replace />} />
+            <Route path="/chamber/dashboard" element={<ContractorDashboard />} />
+
+            {/* Trader */}
+            <Route path="/trader" element={<Navigate to="/trader/dashboard" replace />} />
+            <Route path="/trader/dashboard" element={<ContractorDashboard />} />
           </Route>
         </Route>
 

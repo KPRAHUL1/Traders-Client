@@ -4,19 +4,25 @@ const roles = [
   {
     key: 'agent',
     title: 'Agents',
-    description: 'Manage orders, payments, and your portfolio in one place.',
+    description: 'Browse and order construction materials from chambers.',
     icon: '👨‍💼',
   },
   {
-    key: 'manufacturer',
-    title: 'Manufacturers',
-    description: 'Oversee production, catalogs, and fulfillment workflows.',
+    key: 'chamber',
+    title: 'Chamber Owners',
+    description: 'Manage brick manufacturing and supply operations.',
     icon: '🏭',
+  },
+  {
+    key: 'trader',
+    title: 'Traders',
+    description: 'Trade construction materials across multiple chambers.',
+    icon: '📦',
   },
   {
     key: 'contractor',
     title: 'Contractors',
-    description: 'Access assigned projects, documentation, and reporting.',
+    description: 'Access assigned projects and material requirements.',
     icon: '🔨',
   },
 ]
@@ -41,10 +47,10 @@ export default function Landing() {
           <div className="max-w-6xl mx-auto px-4 py-20">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-                Your Integrated Marketplace
+                Centralized Construction Materials Trading
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Shop like Amazon, connect like IndiaMART. A unified platform for consumers and businesses.
+                Trade bricks, sand, wood, and construction materials. Connect chambers, agents, and traders in one platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -75,14 +81,14 @@ export default function Landing() {
                   <div className="text-6xl mb-4">🛒</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Regular Users</h3>
                   <p className="text-gray-600 mb-6">
-                    Shop from our integrated marketplace with millions of products. 
-                    No role selection needed - just browse, buy, and enjoy!
+                    Browse construction materials from multiple chambers. 
+                    No role selection needed - just browse, order, and get materials delivered!
                   </p>
                   <ul className="text-left text-gray-600 space-y-2 mb-6">
-                    <li>• Browse products from multiple sellers</li>
-                    <li>• Secure mobile number authentication</li>
-                    <li>• Fast delivery and easy returns</li>
-                    <li>• No complex setup required</li>
+                    <li>• Browse bricks, sand, wood, and construction materials</li>
+                    <li>• Compare quality ratings and reviews</li>
+                    <li>• Check real-time stock availability</li>
+                    <li>• Direct ordering with chamber owners</li>
                   </ul>
                   <Link
                     to="/login/regular"
@@ -99,14 +105,14 @@ export default function Landing() {
                   <div className="text-6xl mb-4">🏢</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Business Users</h3>
                   <p className="text-gray-600 mb-6">
-                    Access role-specific dashboards for agents, manufacturers, and contractors. 
-                    Manage your business operations efficiently.
+                    Access role-specific dashboards for agents, chamber owners, and traders. 
+                    Manage construction materials trading operations efficiently.
                   </p>
                   <ul className="text-left text-gray-600 space-y-2 mb-6">
-                    <li>• Role-based access control</li>
-                    <li>• Specialized business tools</li>
-                    <li>• Order and inventory management</li>
-                    <li>• Analytics and reporting</li>
+                    <li>• Chamber management and inventory control</li>
+                    <li>• Agent order processing and tracking</li>
+                    <li>• Trader network and material sourcing</li>
+                    <li>• Super admin oversight and telecalling</li>
                   </ul>
                   <Link
                     to="/role-selection"
