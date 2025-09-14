@@ -10,7 +10,8 @@ const ManageProducts = lazy(() => import('../modules/superadmin/pages/ManageProd
 
 const AgentDashboard = lazy(() => import('../modules/agent/pages/AgentDashboard.jsx'))
 const AgentOrders = lazy(() => import('../modules/agent/pages/AgentOrders.jsx'))
-const AgentPayments = lazy(() => import('../modules/agent/pages/AgentPayments.jsx'))
+const AgentPayments = lazy(() => import('../modules/agent/pages/AgentPayments.jsx'));
+const AgentProducts = lazy(() => import('../modules/agent/pages/AgentProducts.jsx'));
 
 const Login = lazy(() => import('../modules/auth/UserLogin.jsx'))
 const RegularUserLogin = lazy(() => import('../modules/auth/RegularUserLogin.jsx'))
@@ -55,6 +56,7 @@ export function AppRoutes() {
 
             <Route path="/agent" element={<Navigate to="/agent/dashboard" replace />} />
             <Route path="/agent/dashboard" element={<AgentDashboard />} />
+            <Route path="/agent/products" element={<AgentProducts />} />
             <Route path="/agent/orders" element={<AgentOrders />} />
             <Route path="/agent/payments" element={<AgentPayments />} />
 
