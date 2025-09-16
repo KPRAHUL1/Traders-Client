@@ -8,9 +8,9 @@ export default function Navbar({ onMenuClick }) {
   const initials = user?.name ? user.name.split(' ').map((n) => n[0]).join('').slice(0, 2).toUpperCase() : ''
 
   return (
-    <header className="h-14 border-b bg-white flex items-center justify-between px-4">
+    <header className="h-14 bg-indigo-600 text-white flex items-center justify-between px-4 shadow">
       <div className="flex items-center gap-3">
-        <button onClick={onMenuClick} className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded hover:bg-gray-100">
+        <button onClick={onMenuClick} className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded hover:bg-indigo-500/50">
           <Menu className="w-5 h-5" />
         </button>
         <div className="font-semibold tracking-wide">{user ? user.role.toUpperCase() : 'PORTAL'}</div>
@@ -18,15 +18,15 @@ export default function Navbar({ onMenuClick }) {
 
       {user ? (
         <div className="relative">
-          <button onClick={() => setOpen((v) => !v)} className="inline-flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50">
-            <span className="hidden sm:block text-sm text-gray-700">{user.name}</span>
-            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-900 text-white text-xs">
+          <button onClick={() => setOpen((v) => !v)} className="inline-flex items-center gap-2 px-2 py-1.5 rounded hover:bg-indigo-500/60">
+            <span className="hidden sm:block text-sm text-white/90">{user.name}</span>
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white text-xs ring-1 ring-white/20">
               {initials || <CircleUserRound className="w-4 h-4" />}
             </span>
           </button>
           {open ? (
-            <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md z-50">
-              <button onClick={logout} className="w-full flex items-center gap-2 px-3 py-2 text-left text-sm hover:bg-gray-50">
+            <div className="absolute right-0 mt-2 w-44 bg-white border rounded shadow-md z-50">
+              <button onClick={logout} className="w-full flex items-center gap-2 px-3 py-2 text-left text-sm hover:bg-gray-50 text-gray-700">
                 <LogOut className="w-4 h-4" /> Logout
               </button>
             </div>

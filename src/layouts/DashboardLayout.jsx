@@ -7,13 +7,12 @@ export default function DashboardLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
 
-  const openSidebar = () => setIsSidebarOpen(true)
   const closeSidebar = () => setIsSidebarOpen(false)
   const toggleSidebar = () => setIsSidebarOpen((v) => !v)
   const toggleCollapse = () => setIsSidebarCollapsed((v) => !v)
 
   return (
-    <div className="min-h-screen flex bg-gray-50">
+    <div className="h-screen flex bg-gray-50 overflow-hidden">
       {/* Desktop sidebar */}
       <div className="hidden md:block">
         <Sidebar
@@ -34,9 +33,11 @@ export default function DashboardLayout() {
         </div>
       ) : null}
 
-      <div className="flex-1 flex flex-col">
-        <Navbar onMenuClick={toggleSidebar} />
-        <main className="p-4">
+      <div className="flex-1 flex flex-col min-h-screen max-h-screen min-w-0">
+        <div className="sticky top-0 z-30">
+          <Navbar onMenuClick={toggleSidebar} />
+        </div>
+        <main className="flex-1 overflow-x-auto overflow-y-auto p-4">
           <Outlet />
         </main>
       </div>
