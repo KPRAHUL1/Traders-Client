@@ -14,7 +14,12 @@ export default function AdminLogin() {
   const onSubmit = (e) => {
     e.preventDefault()
     if (!username || !password) return
-    login('superadmin', { name: username })
+    login({
+      id: `superadmin_${Date.now()}`,
+      name: username,
+      role: 'superadmin',
+      userType: 'role-based',
+    })
     navigate(from || '/superadmin/dashboard', { replace: true })
   }
 
