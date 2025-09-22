@@ -7,6 +7,7 @@ const roleToMenus = {
     { to: '/superadmin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { to: '/superadmin/users', label: 'Manage Users', icon: Users },
     { to: '/superadmin/products', label: 'Manage Products', icon: Package },
+    { to: '/superadmin/manufacturers', label: 'Manufacturers', icon: Package },
   ],
   agent: [
     { to: '/agent/dashboard', label: 'Dashboard', icon: LayoutDashboard },

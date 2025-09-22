@@ -7,6 +7,7 @@ import AuthLayout from '../layouts/AuthLayout.jsx'
 const SuperAdminDashboard = lazy(() => import('../modules/superadmin/pages/SuperAdminDashboard.jsx'))
 const ManageUsers = lazy(() => import('../modules/superadmin/pages/ManageUsers.jsx'))
 const ManageProducts = lazy(() => import('../modules/superadmin/pages/ManageProducts.jsx'))
+const ManageManufacturers = lazy(() => import('../modules/superadmin/pages/ManageManufacturers.jsx'))
 
 const AgentDashboard = lazy(() => import('../modules/agent/pages/AgentDashboard.jsx'))
 const AgentOrders = lazy(() => import('../modules/agent/pages/AgentOrders.jsx'))
@@ -53,6 +54,7 @@ export function AppRoutes() {
             <Route path="/superadmin/dashboard" element={<SuperAdminDashboard />} />
             <Route path="/superadmin/users" element={<ManageUsers />} />
             <Route path="/superadmin/products" element={<ManageProducts />} />
+            <Route path="/superadmin/manufacturers" element={<ManageManufacturers />} />
 
             <Route path="/agent" element={<Navigate to="/agent/dashboard" replace />} />
             <Route path="/agent/dashboard" element={<AgentDashboard />} />
