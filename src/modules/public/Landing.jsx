@@ -25,6 +25,12 @@ const roles = [
     description: 'Access assigned projects and material requirements.',
     icon: '🔨',
   },
+  {
+    key: 'truck-owner',
+    title: 'Truck Owners',
+    description: 'Manage transportation and logistics for construction materials.',
+    icon: '�',
+  },
 ]
 
 export default function Landing() {
