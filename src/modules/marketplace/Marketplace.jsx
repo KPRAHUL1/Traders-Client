@@ -129,8 +129,8 @@ export default function Marketplace() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">Construction Materials Hub</h1>
-              <span className="ml-2 text-sm text-gray-500">+ IndiaMART</span>
+              <h1 className="text-2xl font-bold text-blue-600">ROSHAN TRADERS</h1>
+              {/* <span className="ml-2 text-sm text-gray-500">+ IndiaMART</span> */}
             </div>
 
             {/* Search Bar */}
