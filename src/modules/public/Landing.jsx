@@ -38,7 +38,14 @@ export default function Landing() {
     <div className="min-h-screen bg-white">
       <header className="border-b">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="font-semibold tracking-wide text-2xl text-blue-600">ROSHAN TRADERS</div>
+          <div className="flex items-center gap-2">
+  <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-3xl px-4 py-1 rounded-lg tracking-widest shadow-md">
+    ROSHAN
+  </div>
+  <span className="text-gray-800 font-semibold text-2xl tracking-tight">
+    TRADERS
+  </span>
+</div>
           <nav className="text-sm text-gray-600 flex items-center gap-4">
             <Link to="/login/regular" className="hover:underline bg-blue-50 px-3 py-1 rounded">Regular User</Link>
             <Link to="/role-selection" className="hover:underline bg-gray-50 px-3 py-1 rounded">Business User</Link>

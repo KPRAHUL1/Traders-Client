@@ -93,7 +93,12 @@ export default function SuperAdminDashboard() {
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Super Admin Dashboard</h1>
+       <div className="flex items-center gap-2">
+  <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-extrabold text-3xl px-4 py-2 rounded-xl shadow-md tracking-tight">
+    Super<span className="text-yellow-300">Admin</span>
+  </div>
+  <span className="text-gray-500 text-sm font-medium ml-1">Dashboard</span>
+</div>
         <button
           onClick={logout}
           className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
