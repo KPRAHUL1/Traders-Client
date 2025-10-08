@@ -6,7 +6,6 @@ export default function CallUserOnPurchase({ user }) {
 
   const handleCall = () => {
     setOpen(true);
-    // Simulate call duration
     setTimeout(() => setOpen(false), 3000);
   };
 

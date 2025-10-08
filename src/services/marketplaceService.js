@@ -1,4 +1,3 @@
-// Mock service for marketplace module
 export function getMarketplaceProducts() {
   return Promise.resolve([
     { id: 1, name: 'Cement', price: 320, stock: 100 },

@@ -123,17 +123,13 @@ export default function Marketplace() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-blue-600">ROSHAN TRADERS</h1>
-              {/* <span className="ml-2 text-sm text-gray-500">+ IndiaMART</span> */}
             </div>
 
-            {/* Search Bar */}
             <div className="flex-1 max-w-lg mx-8">
               <div className="relative">
                 <input
@@ -151,7 +147,6 @@ export default function Marketplace() {
               </div>
             </div>
 
-            {/* User Menu */}
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <button className="flex items-center text-gray-700 hover:text-gray-900">
@@ -176,7 +171,6 @@ export default function Marketplace() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* Trending Searches */}
         <div className="mb-6">
           <h3 className="text-sm font-medium text-gray-700 mb-3">Trending Searches</h3>
           <div className="flex flex-wrap gap-2">
@@ -192,7 +186,6 @@ export default function Marketplace() {
           </div>
         </div>
 
-        {/* Chambers */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Featured Chambers</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -224,7 +217,6 @@ export default function Marketplace() {
           </div>
         </div>
 
-        {/* Categories */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Shop by Category</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -245,7 +237,6 @@ export default function Marketplace() {
           </div>
         </div>
 
-        {/* Featured Products */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Featured Construction Materials</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -270,7 +261,6 @@ export default function Marketplace() {
                   <h4 className="font-medium text-gray-900 mb-1 line-clamp-2">{product.name}</h4>
                   <p className="text-sm text-gray-500 mb-2">{product.chamber}</p>
                   
-                  {/* Stock Information */}
                   <div className="mb-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-600">Stock:</span>
@@ -280,7 +270,6 @@ export default function Marketplace() {
                     </div>
                   </div>
 
-                  {/* Rating and Reviews */}
                   <div className="flex items-center mb-3">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
@@ -299,7 +288,6 @@ export default function Marketplace() {
                     <span className="ml-1 text-sm text-gray-500">({product.reviews})</span>
                   </div>
 
-                  {/* Price and Order */}
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-lg font-semibold text-gray-900">₹{product.price.toLocaleString()}</span>
@@ -323,7 +311,6 @@ export default function Marketplace() {
           </div>
         </div>
 
-        {/* Cart Sidebar */}
         {cart.length > 0 && (
           <div className="fixed bottom-4 right-4 bg-white rounded-lg shadow-lg border p-4 max-w-sm">
             <h4 className="font-semibold text-gray-900 mb-2">Cart ({cart.length})</h4>

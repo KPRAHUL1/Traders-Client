@@ -1,4 +1,3 @@
-// Mock service for superadmin module
 export function getSuperAdminDashboardData() {
   return Promise.resolve({
     users: 120,

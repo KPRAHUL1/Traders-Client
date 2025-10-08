@@ -1,4 +1,3 @@
-// Mock service for agent module
 export function getAgentDashboardData() {
   return Promise.resolve({
     stats: [

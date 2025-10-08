@@ -1,4 +1,3 @@
-// Service for manufacturers (admin view)
 import { manufacturers } from '../modules/superadmin/pages/manufacturers.mock.js';
 
 export function getAllManufacturers() {
@@ -9,7 +8,6 @@ export function getManufacturerById(id) {
   return Promise.resolve(manufacturers.find(m => m.id === id));
 }
 
-// Simulate real-time updates (for demo)
 let listeners = [];
 export function subscribeToManufacturerUpdates(cb) {
   listeners.push(cb);

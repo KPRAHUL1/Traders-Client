@@ -5,13 +5,11 @@ export default function ProtectedRoute({ allowedRoles }) {
   const { isAuthenticated, user, isLoading } = useAuth()
   const location = useLocation()
 
-  // Show loading while checking authentication
   if (isLoading) {
     return <div className="min-h-screen grid place-items-center text-gray-600">Loading...</div>
   }
 
   if (!isAuthenticated) {
-    // Redirect to appropriate login based on the route
     if (allowedRoles.includes('regular')) {
       return <Navigate to="/login/regular" state={{ from: location }} replace />
     } else {
@@ -20,7 +18,6 @@ export default function ProtectedRoute({ allowedRoles }) {
   }
 
   if (user && !allowedRoles.includes(user.role)) {
-    // If user has wrong role, redirect to appropriate login
     if (user.userType === 'regular' && !allowedRoles.includes('regular')) {
       return <Navigate to="/role-selection" replace />
     } else if (user.userType === 'role-based' && !allowedRoles.includes(user.role)) {

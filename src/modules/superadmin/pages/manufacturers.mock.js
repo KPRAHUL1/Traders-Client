@@ -1,4 +1,3 @@
-// Mock data for manufacturers and their details
 export const manufacturers = [
   {
     id: 'm1',

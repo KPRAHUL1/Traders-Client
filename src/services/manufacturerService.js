@@ -1,4 +1,3 @@
-// Mock service for manufacturer module
 import { manufacturerStats, productCatalog, recentOrders } from '../modules/manufacturer/pages/manufacturer.mock.js';
 
 export function getManufacturerStats() {
