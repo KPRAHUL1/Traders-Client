@@ -55,7 +55,6 @@ export default function Landing() {
       </header>
 
       <main>
-        {/* Hero Section */}
         <section className="bg-gradient-to-r from-blue-50 to-indigo-50">
           <div className="max-w-6xl mx-auto px-4 py-20">
             <div className="text-center">
@@ -83,12 +82,10 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* User Types Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Choose Your Experience</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Regular Users */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-blue-300 transition-colors">
                 <div className="text-center">
                   <div className="text-6xl mb-4">🛒</div>
@@ -112,7 +109,6 @@ export default function Landing() {
                 </div>
               </div>
 
-              {/* Business Users */}
               <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-blue-300 transition-colors">
                 <div className="text-center">
                   <div className="text-6xl mb-4">🏢</div>
@@ -139,7 +135,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Business Roles Section */}
         <section className="bg-gray-50 py-16">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Business Roles Available</h2>
@@ -161,7 +156,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Features Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Our Platform?</h2>

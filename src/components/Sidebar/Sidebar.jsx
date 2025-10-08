@@ -35,19 +35,15 @@ export default function Sidebar({ variant = 'desktop', collapsed = false, onTogg
       variant === 'desktop' ? 'h-screen sticky top-0' : 'h-full'
     } relative flex flex-col transition-all duration-300 ease-out`}>
       
-      {/* Background with gradient and blur effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 backdrop-blur-xl"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-cyan-600/10"></div>
       <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
       
-      {/* Animated border gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 opacity-50"></div>
       <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
       
-      {/* Content */}
       <div className="relative flex flex-col h-full z-10">
-        
-        {/* Header */}
+
         <div className={`${
           collapsed ? 'px-4 justify-center' : 'px-6'
         } h-16 flex items-center gap-3 border-b border-white/10 bg-white/5 backdrop-blur-sm`}>
@@ -82,7 +78,6 @@ export default function Sidebar({ variant = 'desktop', collapsed = false, onTogg
           )}
         </div>
         
-        {/* Navigation */}
         <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
           {menus.map((item,) => {
             const Icon = item.icon
@@ -101,12 +96,10 @@ export default function Sidebar({ variant = 'desktop', collapsed = false, onTogg
                   }
                 `}
               >
-                {/* Active indicator */}
                 {(active) && (
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-blue-400 to-purple-400 rounded-r-full"></div>
                 )}
                 
-                {/* Icon container */}
                 <div className={`relative flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 ${
                   active 
                     ? 'bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg shadow-blue-500/20' 
@@ -116,7 +109,6 @@ export default function Sidebar({ variant = 'desktop', collapsed = false, onTogg
                     active ? 'text-white' : 'text-slate-400 group-hover:text-white'
                   }`} />
                   
-                  {/* Hover sparkle effect */}
                   <Sparkles className={`absolute top-0 right-0 w-2 h-2 text-yellow-400 transition-all duration-300 ${
                     active ? 'opacity-100 scale-100' : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100'
                   }`} />
@@ -145,7 +137,6 @@ export default function Sidebar({ variant = 'desktop', collapsed = false, onTogg
       
       </div>
       
-      {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-30"></div>
         <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-20 animation-delay-1000"></div>

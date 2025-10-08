@@ -30,10 +30,8 @@ export function AppRoutes() {
       <Routes>
         <Route path="/" element={<Landing />} />
         
-        {/* Role Selection */}
         <Route path="/role-selection" element={<RoleSelection />} />
         
-        {/* Authentication Routes */}
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/login/:role" element={<Login />} />
@@ -42,12 +40,10 @@ export function AppRoutes() {
           <Route path="/admin/login" element={<AdminLogin />} />
         </Route>
 
-        {/* Regular User Routes */}
         <Route element={<ProtectedRoute allowedRoles={["regular"]} />}>
           <Route path="/marketplace" element={<Marketplace />} />
         </Route>
 
-        {/* Role-based User Routes */}
         <Route element={<ProtectedRoute allowedRoles={["superadmin", "agent", "contractor", "manufacturer", "chamber", "trader"]} />}> 
           <Route element={<DashboardLayout />}>
             <Route path="/superadmin" element={<Navigate to="/superadmin/dashboard" replace />} />
@@ -62,19 +58,15 @@ export function AppRoutes() {
             <Route path="/agent/orders" element={<AgentOrders />} />
             <Route path="/agent/payments" element={<AgentPayments />} />
 
-            {/* Contractor */}
             <Route path="/contractor" element={<Navigate to="/contractor/dashboard" replace />} />
             <Route path="/contractor/dashboard" element={<ContractorDashboard />} />
 
-            {/* Manufacturer */}
             <Route path="/manufacturer" element={<Navigate to="/manufacturer/dashboard" replace />} />
             <Route path="/manufacturer/dashboard" element={<ManufacturerDashboard />} />
 
-            {/* Chamber */}
             <Route path="/chamber" element={<Navigate to="/chamber/dashboard" replace />} />
             <Route path="/chamber/dashboard" element={<ContractorDashboard />} />
 
-            {/* Trader */}
             <Route path="/trader" element={<Navigate to="/trader/dashboard" replace />} />
             <Route path="/trader/dashboard" element={<ContractorDashboard />} />
           </Route>

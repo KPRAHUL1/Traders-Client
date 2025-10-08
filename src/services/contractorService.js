@@ -1,4 +1,3 @@
-// Mock service for contractor module
 export function getContractorDashboardData() {
   return Promise.resolve({
     stats: [

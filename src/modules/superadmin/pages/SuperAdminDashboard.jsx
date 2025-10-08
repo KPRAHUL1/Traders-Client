@@ -71,7 +71,7 @@ const priorityColors = {
 }
 
 export default function SuperAdminDashboard() {
-  const { user, logout } = useAuth()
+  const { logout } = useAuth()
   const [selectedOrder, setSelectedOrder] = useState(null)
   const [showCallModal, setShowCallModal] = useState(false)
   const [callTarget, setCallTarget] = useState('')
@@ -79,7 +79,6 @@ export default function SuperAdminDashboard() {
   const handleCallAgent = (agentContact, agentName) => {
     setCallTarget(agentName)
     setShowCallModal(true)
-    // In a real app, this would initiate a call
     setTimeout(() => {
       setShowCallModal(false)
       alert(`Calling ${agentName}...`)
@@ -107,7 +106,6 @@ export default function SuperAdminDashboard() {
         </button>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div className="bg-white p-6 rounded-lg shadow">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Total Orders</h3>
@@ -127,7 +125,6 @@ export default function SuperAdminDashboard() {
         </div>
       </div>
 
-      {/* Orders Table */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-900">All Orders</h2>
@@ -219,7 +216,6 @@ export default function SuperAdminDashboard() {
         </div>
       </div>
 
-      {/* Order Details Modal */}
       {selectedOrder && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
           <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
@@ -297,7 +293,6 @@ export default function SuperAdminDashboard() {
         </div>
       )}
 
-      {/* Call Modal */}
       {showCallModal && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
           <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
