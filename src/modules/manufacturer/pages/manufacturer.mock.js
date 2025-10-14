@@ -16,7 +16,7 @@ export const productCatalog = [
 export const recentOrders = [
   { id: 101, product: 'Cement', quantity: 20, buyer: 'ABC Constructions', status: 'processing' },
   { id: 102, product: 'Steel Rods', quantity: 10, buyer: 'XYZ Builders', status: 'shipped' },
-  { id: 103, product: 'Bricks', quantity: 50, buyer: 'LMN Infra', status: 'pending' },
+  { id: 103, product: 'Bricks', quantity: 50, buyer: 'RN Chambers', status: 'pending' },
 ];
 
 export const menuItems = [
