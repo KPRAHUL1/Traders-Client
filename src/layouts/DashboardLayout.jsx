@@ -13,7 +13,6 @@ export default function DashboardLayout() {
 
   return (
     <div className="h-screen flex bg-gray-50 overflow-hidden">
-      {/* Desktop sidebar */}
       <div className="hidden md:block">
         <Sidebar
           variant="desktop"
@@ -22,8 +21,6 @@ export default function DashboardLayout() {
           onNavigate={closeSidebar}
         />
       </div>
-
-      {/* Mobile sidebar overlay */}
       {isSidebarOpen ? (
         <div className="md:hidden fixed inset-0 z-40">
           <div className="absolute inset-0 bg-black/40" onClick={closeSidebar} />
